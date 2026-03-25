@@ -1,51 +1,12 @@
-# 🚀 NASA Bounce Insights Dashboard
 
-A full-stack application for exploring space data, built with React and Node.js.
+![APOD](https://apod.nasa.gov/apod/image/2603/rapa_nui_milky_way_1024.jpeg)
 
-## 🌌 Astronomy Picture of the Day
-(Your script will replace everything here)
----
+**Title:** The Guardians of Rapa Nui beneath the Milky Way  
+**Date:** 2026-03-25  
+**Explanation:** In the words of today's astrophotographer, Rositsa Dimitrova, "What have these silent sentinels watched pass across the sky?" The volcanic mo'ai (meaning statue) of Ahu Tongariki stand guard over Rapa Nui (Isla de Pascua, Easter Island), a Polynesian island (annexed by Chile in 1888) located thousands of kilometers off the coast of South America in the Pacific Ocean. Due to the island's remoteness, the mo'ai, with their backs to the dark ocean, are able to gaze upon a clear and vibrant night sky. Pictured, these larger-than-life statues stare at the bright band of the Milky Way, partly obscured by interstellar dust and blurred by Earth's clouds. Under such clear night skies, the Rapa Nui created observatories and used astronomical observations for navigation, calendar calibration, celebrations, and more. Images like this one remind us of the importance of dark skies, protecting the land underneath them, and preserving the culture that they inspire.
 
-## 🛠️ Tech Stack
+![APOD](https://apod.nasa.gov/apod/image/2603/rapa_nui_milky_way_1024.jpeg)
 
-| Layer | Technologies |
-| :--- | :--- |
-| **Frontend** | React, Tailwind CSS, React Query, Chart.js |
-| **Backend** | Node.js, Express |
-| **Infrastructure** | Docker, Docker Compose, GitHub Actions |
-| **Data Source** | [NASA Open APIs](https://api.nasa.gov/) |
-
----
-
-## ⚡ Getting Started
-
-### Prerequisites
-- Node.js (v18+)
-- Docker & Docker Compose (optional)
-
-### Local Development
-1. **Backend**
-   ```bash
-   cd backend
-   npm install
-   npm run dev
-   ```
-
-2. **Frontend**
-   ```bash
-   cd backend
-   npm install
-   npm run dev
-   ```
-
-3. **Docker**
-
-Run the following command from root directory to start full application:
-
-   ```bash
-   docker-compose up --build
-   ```
-
-## 🤖 Automation
-
-This repository uses GitHub Actions to automatically update the APOD section above every 24 hours via a custom Node.js script.
+**Title:** The Guardians of Rapa Nui beneath the Milky Way  
+**Date:** 2026-03-25  
+**Explanation:** In the words of today's astrophotographer, Rositsa Dimitrova, "What have these silent sentinels watched pass across the sky?" The volcanic mo'ai (meaning statue) of Ahu Tongariki stand guard over Rapa Nui (Isla de Pascua, Easter Island), a Polynesian island (annexed by Chile in 1888) located thousands of kilometers off the coast of South America in the Pacific Ocean. Due to the island's remoteness, the mo'ai, with their backs to the dark ocean, are able to gaze upon a clear and vibrant night sky. Pictured, these larger-than-life statues stare at the bright band of the Milky Way, partly obscured by interstellar dust and blurred by Earth's clouds. Under such clear night skies, the Rapa Nui created observatories and used astronomical observations for navigation, calendar calibration, celebrations, and more. Images like this one remind us of the importance of dark skies, protecting the land underneath them, and preserving the culture that they inspire.
