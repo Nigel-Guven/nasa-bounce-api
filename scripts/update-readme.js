@@ -8,25 +8,32 @@ async function update() {
     const response = await fetch(url);
     const data = await response.json();
 
+    // Use only 'url' for the README (it's faster to load than hdurl)
+    const imageUrl = data.url;
+
     const readmePath = 'README.md';
-    const currentContent = fs.readFileSync(readmePath, 'utf8');
+    let content = fs.readFileSync(readmePath, 'utf8');
 
-    // Only the image markdown
-    const newApodContent = `\n![APOD](${data.url})\n`;
-
-    // The Specific Regex: Targets ONLY the area between your markers
-    const regex = /[\s\S]*/g;
+    // This is the EXACT header in your README
+    const header = '## 🌌 Astronomy Picture of the Day';
     
-    // Replace the section, preserving the markers for the next run
-    const updatedContent = currentContent.replace(
-      regex, 
-      `${newApodContent}`
-    );
+    // This defines the "Search" area: 
+    // From the header, through any existing images/text, until the next separator (---)
+    const sectionRegex = new RegExp(`${header}[\\s\\S]*?(?=\\n---)`, 'g');
 
-    fs.writeFileSync(readmePath, updatedContent);
-    console.log(`✅ README updated with new image only.`);
+    // This defines the "Replacement": The header plus JUST ONE image
+    const newSection = `${header}\n\n![APOD](${imageUrl})`;
+
+    if (content.includes(header)) {
+      const updatedContent = content.replace(sectionRegex, newSection);
+      fs.writeFileSync(readmePath, updatedContent);
+      console.log(`✅ Success! Updated with: ${data.title}`);
+    } else {
+      console.error("❌ Could not find the header anchor in README.");
+    }
+
   } catch (error) {
-    console.error("❌ Error:", error);
+    console.error("❌ Update failed:", error);
     process.exit(1);
   }
 }
