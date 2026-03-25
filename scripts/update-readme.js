@@ -6,22 +6,22 @@ const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 async function update() {
   try {
     const response = await fetch(url);
-    const data = await response.json();
 
-    // Use only 'url' for the README (it's faster to load than hdurl)
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`NASA API returned ${response.status}: ${errorText}`);
+    }
+
+    const data = await response.json();
     const imageUrl = data.url;
 
     const readmePath = 'README.md';
     let content = fs.readFileSync(readmePath, 'utf8');
 
-    // This is the EXACT header in your README
     const header = '## 🌌 Astronomy Picture of the Day';
     
-    // This defines the "Search" area: 
-    // From the header, through any existing images/text, until the next separator (---)
     const sectionRegex = new RegExp(`${header}[\\s\\S]*?(?=\\n---)`, 'g');
 
-    // This defines the "Replacement": The header plus JUST ONE image
     const newSection = `${header}\n\n![APOD](${imageUrl})`;
 
     if (content.includes(header)) {
