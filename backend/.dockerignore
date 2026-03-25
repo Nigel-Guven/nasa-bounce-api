@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build and Dist
+dist/
+build/
+
+# Environment and Secrets
+.env
+
+# Debugging and Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDEs and OS Metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Docker files (No need to copy these into the image)
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Git
+.git
+.gitignore

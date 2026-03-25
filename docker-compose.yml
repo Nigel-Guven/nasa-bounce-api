@@ -1,0 +1,23 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.Backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 10s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.Frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy # Waits for the healthcheck to pass
