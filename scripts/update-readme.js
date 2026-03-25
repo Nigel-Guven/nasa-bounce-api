@@ -8,31 +8,25 @@ async function update() {
     const response = await fetch(url);
     const data = await response.json();
 
-    if (!data.url) {
-      throw new Error("No URL found in NASA API response");
-    }
-
     const readmePath = 'README.md';
     const currentContent = fs.readFileSync(readmePath, 'utf8');
 
-    // 1. Define the new content block
-    const newApodContent = `
-![APOD](${data.url})
-`;
+    // Only the image markdown
+    const newApodContent = `\n![APOD](${data.url})\n`;
 
-    // 2. This Regex specifically finds the text BETWEEN your markers
+    // The Specific Regex: Targets ONLY the area between your markers
     const regex = /[\s\S]*/g;
     
-    // 3. Replace the old block with the new one (keeping the markers for the next run)
+    // Replace the section, preserving the markers for the next run
     const updatedContent = currentContent.replace(
       regex, 
       `${newApodContent}`
     );
 
     fs.writeFileSync(readmePath, updatedContent);
-    console.log(`✅ README updated with: ${data.title}`);
+    console.log(`✅ README updated with new image only.`);
   } catch (error) {
-    console.error("❌ Failed to update README:", error);
+    console.error("❌ Error:", error);
     process.exit(1);
   }
 }
