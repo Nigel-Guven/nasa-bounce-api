@@ -15,12 +15,15 @@ async function update() {
     const readmePath = 'README.md';
     const currentContent = fs.readFileSync(readmePath, 'utf8');
 
+    // 1. Define the new content block
     const newApodContent = `
 ![APOD](${data.url})
 `;
 
+    // 2. This Regex specifically finds the text BETWEEN your markers
     const regex = /[\s\S]*/g;
     
+    // 3. Replace the old block with the new one (keeping the markers for the next run)
     const updatedContent = currentContent.replace(
       regex, 
       `${newApodContent}`
