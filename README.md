@@ -3,7 +3,7 @@
 A full-stack application for exploring space data, built with React and Node.js.
 
 ## 🌌 Astronomy Picture of the Day
-(Your script will replace everything here)
+(The script will only change what is inside these two markers)
 ---
 
 ## 🛠️ Tech Stack

@@ -17,10 +17,6 @@ async function update() {
 
     const newApodContent = `
 ![APOD](${data.url})
-
-**Title:** ${data.title}  
-**Date:** ${data.date}  
-**Explanation:** ${data.explanation}
 `;
 
     const regex = /[\s\S]*/g;
