@@ -1,7 +1,8 @@
 # 🚀 NASA Bounce Insights Dashboard
 
 ## 🌌 Astronomy Picture of the Day
-(Image goes here)
+
+![APOD](https://apod.nasa.gov/apod/image/2603/rapa_nui_milky_way_1024.jpeg)
 ---
 
 ## 🛠️ Tech Stack
