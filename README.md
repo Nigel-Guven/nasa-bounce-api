@@ -3,11 +3,7 @@
 A full-stack application for exploring space data, built with React and Node.js.
 
 ## 🌌 Astronomy Picture of the Day
-![APOD](https://apod.nasa.gov/apod/image/2603/Perseverance_MarsRover_PIA25608_1024.jpg)
-
-**Title:** Perseverance Rover Selfie  
-**Date:** 2026-03-25  
-**Explanation:** The NASA Perseverance rover captured this selfie on the Martian surface.
+(Your script will replace everything here)
 ---
 
 ## 🛠️ Tech Stack
