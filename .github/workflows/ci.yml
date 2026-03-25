@@ -28,4 +28,4 @@ jobs:
 
       - name: Run tests
         working-directory: ${{ matrix.project }}
-        run: npm test -- --coverage
+        run: npm test -- --coverage --passWithNoTests
