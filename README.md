@@ -2,7 +2,7 @@
 
 ## 🌌 Astronomy Picture of the Day
 
-![APOD](https://apod.nasa.gov/apod/image/2603/GWTC4-Events-Poster-Landscape_1024.jpg)
+![APOD](https://apod.nasa.gov/apod/image/2603/NGC3190-APOD1024.jpg)
 ---
 
 ## 🛠️ Tech Stack
