@@ -1,7 +1,7 @@
-const nasaController = require('../controllers/nasaController');
-const nasaService = require('../services/nasaService');
+const nasaController = require('../../src/controllers/nasaController');
+const nasaService = require('../../src/services/nasaService');
 
-jest.mock('../services/nasaService');
+jest.mock('../../src/services/nasaService');
 
 describe('NASA Controller', () => {
   let req;

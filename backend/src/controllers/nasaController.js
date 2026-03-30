@@ -13,7 +13,7 @@ exports.fetchAPOD = async (req, res, next) => {
 // Mars
 exports.fetchMarsPhotos = async (req, res, next) => {
   try {
-    const { rover = 'curiosity', date = '2026-01-01' } = req.query;
+    const { rover = 'curiosity', date } = req.query;
 
     if (!date) {
       return res.status(400).json({ message: 'Date is required' });
