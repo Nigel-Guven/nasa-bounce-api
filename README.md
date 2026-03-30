@@ -2,7 +2,7 @@
 
 ## 🌌 Astronomy Picture of the Day
 
-![APOD](https://apod.nasa.gov/apod/image/2603/goddardphotop9-1_800.jpg)
+![APOD](https://apod.nasa.gov/apod/image/2603/Message_Arecibo_960.jpg)
 ---
 
 ## 🛠️ Tech Stack
