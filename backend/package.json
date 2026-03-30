@@ -7,7 +7,9 @@
     "start": "node src/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "coverage": "jest --coverage",
+    "coverage:upload": "codecov"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,7 @@
     "node-cache": "^5.1.2"
   },
   "devDependencies": {
+    "codecov": "^3.8.2",
     "jest": "^30.3.0",
     "nodemon": "^3.1.14"
   }

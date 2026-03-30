@@ -1,6 +1,6 @@
 # 🚀 NASA Bounce Insights Dashboard
 
-![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen)
+[![codecov](https://codecov.io/gh/Nigel-Guven/nasa-bounce-api/branch/main/graph/badge.svg?token=<TOKEN>)](https://codecov.io/gh/<username>/<repo>)
 
 ### 🛠️ Tech Stack
 
