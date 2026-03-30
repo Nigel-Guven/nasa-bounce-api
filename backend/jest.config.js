@@ -10,8 +10,8 @@ module.exports = {
     '!src/config/**', 
     '!src/server.js', 
     '!src/app.js', 
-    '!src/routes.js', 
-     '!src/middleware.js',
+    '!src/routes/**', 
+     '!src/middleware/**',
   ],
   coverageReporters: ['json', 'lcov', 'text', 'clover'],
 };
