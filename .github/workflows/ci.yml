@@ -1,31 +1,37 @@
-name: CI
+name: Node.js CI
 
 on:
-  #push:
-  #  branches: [ main]
+  push:
+    branches: [ main ]
   pull_request:
-    branches: [ main]
+    branches: [ main ]
 
 jobs:
-  build-and-test:
+  test:
+    name: Run Backend Tests
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        project: [backend, frontend]
+        node-version: [18.x, 20.x]
 
     steps:
-      - uses: actions/checkout@v3
+      # 1. Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Set up Node
+      # 2. Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: ${{ matrix.node-version }}
 
+      # 3. Install dependencies
       - name: Install dependencies
-        working-directory: ${{ matrix.project }}
-        run: npm install --legacy-peer-deps
+        working-directory: ./backend
+        run: npm ci
 
-      - name: Run tests
-        working-directory: ${{ matrix.project }}
-        run: npm test -- --coverage --passWithNoTests
+      # 4. Run tests
+      - name: Run Jest Tests
+        working-directory: ./backend
+        run: npx jest --coverage --verbose

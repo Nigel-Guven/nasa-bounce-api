@@ -1,42 +1,92 @@
-const axios = require('axios');
+const { nasaApi, nasaImageApi } = require('../config/apiClient');
+const endpoints = require('../config/endpoints');
 
-const BASE_URL = 'https://api.nasa.gov';
+const Validators = require('../utils/validators');
+const CacheManager = require('../utils/cacheManager');
+const cache = new CacheManager(); // 5 min TTL
 
-const api = axios.create({
-  baseURL: BASE_URL,
-  params: {
-    api_key: process.env.NASA_API_KEY
-  }
-});
+const ApodImage = require('../models/ApodImage');
+const MarsPhoto = require('../models/MarsPhoto');
+const NEOFeed = require('../models/NEOFeed');
+const NasaImage = require('../models/NasaImage');
 
-// APOD
 const getAPOD = async () => {
-  const res = await api.get('/planetary/apod');
-  return res.data;
+  const key = 'apod';
+  const cached = cache.get(key);
+  if (cached) return cached;
+
+  const res = await nasaApi.get(endpoints.APOD);
+  const data = new ApodImage(res.data);
+
+  cache.set(key, data);
+
+  return data;
 };
 
-// Mars Rover
-const getMarsPhotos = async (rover, date) => {
-  const res = await api.get(`/mars-photos/api/v1/rovers/${rover}/photos`, {
-    params: { earth_date: date }
-  });
-  return res.data.photos;
+const getMarsPhotos = async (rover = 'curiosity', date) => {
+  Validators.validateRover(rover);
+  Validators.validateDate(date);
+
+  const key = `mars-${rover}-${date}`;
+  const cached = cache.get(key);
+  if (cached) return cached;
+
+  const res = await nasaApi.get(
+    endpoints.MARS_PHOTOS(rover),
+    { params: { earth_date: date } }
+  );
+
+  const data = res.data.photos.map(p => new MarsPhoto(p));
+
+  cache.set(key, data);
+
+  return data;
 };
 
-// Near Earth Objects
 const getNEO = async (startDate, endDate) => {
-  const res = await api.get('/neo/rest/v1/feed', {
+  if (!startDate || !endDate) {
+    throw new Error('Start and end dates are required');
+  }
+
+  const key = `neo-${startDate}-${endDate}`;
+  const cached = cache.get(key);
+  if (cached) return cached;
+
+  const res = await nasaApi.get(endpoints.NEO_FEED, {
     params: { start_date: startDate, end_date: endDate }
   });
-  return res.data;
+
+  const objects = res.data.near_earth_objects;
+
+  const data = Object.keys(objects).map(
+    date => new NEOFeed(date, objects[date])
+  );
+
+  cache.set(key, data);
+
+  return data;
 };
 
-// Image Search
 const searchImages = async (query) => {
-  const res = await axios.get('https://images-api.nasa.gov/search', {
+  if (!query) {
+    throw new Error('Search query is required');
+  }
+
+  const key = `search-${query}`;
+  const cached = cache.get(key);
+  if (cached) return cached;
+
+  const res = await nasaImageApi.get(endpoints.IMAGE_SEARCH, {
     params: { q: query }
   });
-  return res.data;
+
+  const data = res.data.collection.items.map(
+    item => new NasaImage(item)
+  );
+
+  cache.set(key, data);
+
+  return data;
 };
 
 module.exports = {
