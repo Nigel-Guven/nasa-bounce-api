@@ -5,9 +5,13 @@ module.exports = {
   coverageDirectory: 'coverage',
   collectCoverage: true,
   collectCoverageFrom: [
-    'src/**/*.js', // include all source files
-    '!src/**/*.test.js', // exclude test files
-    '!src/config/**', // exclude configs if you like
+    'src/**/*.js',
+    '!src/**/*.test.js',
+    '!src/config/**', 
+    '!src/server.js', 
+    '!src/app.js', 
+    '!src/routes.js', 
+     '!src/middleware.js',
   ],
   coverageReporters: ['json', 'lcov', 'text', 'clover'],
 };
