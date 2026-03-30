@@ -1,11 +1,8 @@
 # 🚀 NASA Bounce Insights Dashboard
 
-## 🌌 Astronomy Picture of the Day
+![Coverage](https://img.shields.io/badge/coverage-85%25-brightgreen)
 
-![APOD](https://apod.nasa.gov/apod/image/2603/Message_Arecibo_960.jpg)
----
-
-## 🛠️ Tech Stack
+### 🛠️ Tech Stack
 
 | Layer | Technologies |
 | :--- | :--- |
@@ -16,13 +13,13 @@
 
 ---
 
-## ⚡ Getting Started
+### ⚡ Getting Started
 
-### Prerequisites
+#### Prerequisites
 - Node.js (v18+)
 - Docker & Docker Compose (optional)
 
-### Local Development
+#### Local Development
 1. **Backend**
    ```bash
    cd backend
@@ -44,7 +41,3 @@ Run the following command from root directory to start full application:
    ```bash
    docker-compose up --build
    ```
-
-## 🤖 Automation
-
-This repository uses GitHub Actions to automatically update the APOD section above every 24 hours via a custom Node.js script.
