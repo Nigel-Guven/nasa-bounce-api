@@ -17,17 +17,13 @@ const Home = () => {
 
   if (!apod) return null;
 
-  // Using your flattened ApodImage Model properties
   const displayImage = apod.image || apod.hdImage;
 
   return (
-    /* We removed 'min-h-screen', 'bg-cover', etc., and replaced them with 'bg-galaxy'.
-       The background-image is now handled globally by your CSS.
-    */
+
     <div className="bg-galaxy p-6 flex flex-col items-center">
       <div className="max-w-5xl w-full mt-10">
         <header className="mb-12 text-center mt-10 relative">
-          {/* The Scrim: This invisible box ensures the text always has a dark backdrop */}
           <div className="absolute -inset-x-20 -top-10 bottom-0 bg-black/40 blur-3xl -z-10 rounded-full" />
 
           <h2 className="text-amber-400/90 uppercase tracking-[0.5em] text-[10px] sm:text-xs font-black mb-4 
@@ -36,7 +32,6 @@ const Home = () => {
           </h2>
 
           <h1 className="text-4xl md:text-6xl font-black text-white leading-tight">
-            {/* Outline + Shadow combo for maximum clarity */}
             <span className="drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
               {apod.title}
             </span>
@@ -51,7 +46,6 @@ const Home = () => {
 
         <div className="flex flex-col items-center">
           <div className="relative group w-full mb-8">
-            {/* Aesthetic Glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
             
             <div className="relative bg-black rounded-xl overflow-hidden border border-white/10 shadow-2xl">

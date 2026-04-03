@@ -108,7 +108,6 @@ const NEO = () => {
         </div>
         </header>
 
-        {/* --- ERROR STATE --- */}
         {(validationError || error) ? (
           <div className="max-w-2xl mx-auto mt-20">
             <div className="bg-red-950/40 backdrop-blur-xl border-2 border-red-500/50 p-10 rounded-3xl shadow-[0_0_40px_rgba(239,68,68,0.15)] text-center">
@@ -120,7 +119,6 @@ const NEO = () => {
             </div>
           </div>
         ) : (
-          /* --- NEO GRID --- */
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {processedAsteroids.map((asteroid) => (
               <div key={asteroid.id} className="group relative bg-slate-900/40 backdrop-blur-xl border border-white/10 p-7 rounded-3xl hover:border-blue-500/50 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
