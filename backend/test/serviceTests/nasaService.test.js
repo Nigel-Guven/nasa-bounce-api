@@ -29,7 +29,7 @@ describe('NASA Service', () => {
   });
 
   // -------------------------
-  // getAPOD
+  // Fetch APOD
   // -------------------------
   describe('getAPOD', () => {
     it('throws if API fails', async () => {
@@ -42,7 +42,7 @@ describe('NASA Service', () => {
   });
 
   // -------------------------
-  // getMarsPhotos
+  // Fetch Mars Photos
   // -------------------------
   describe('getMarsPhotos', () => {
     const rover = 'curiosity';
@@ -60,7 +60,7 @@ describe('NASA Service', () => {
   });
 
   // -------------------------
-  // getNEO
+  // Fetch NEO
   // -------------------------
   describe('getNEO', () => {
     const start = '2026-01-01';
@@ -73,7 +73,7 @@ describe('NASA Service', () => {
   });
 
   // -------------------------
-  // searchImages
+  // Search Images
   // -------------------------
   describe('searchImages', () => {
     const query = 'mars';

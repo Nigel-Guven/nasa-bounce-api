@@ -18,7 +18,7 @@ describe('NASA Controller', () => {
   });
 
   // -------------------------
-  // fetchAPOD
+  // Fetch APOD
   // -------------------------
   describe('fetchAPOD', () => {
     it('should return APOD data', async () => {
@@ -42,7 +42,7 @@ describe('NASA Controller', () => {
   });
 
   // -------------------------
-  // fetchMarsPhotos
+  // Fetch Mars Photos
   // -------------------------
   describe('fetchMarsPhotos', () => {
     it('should return photos when date is provided', async () => {
@@ -90,7 +90,7 @@ describe('NASA Controller', () => {
   });
 
   // -------------------------
-  // fetchNEO
+  // Fetch NEO
   // -------------------------
   describe('fetchNEO', () => {
     it('should return NEO data when start and end dates are provided', async () => {
@@ -126,7 +126,7 @@ describe('NASA Controller', () => {
   });
 
   // -------------------------
-  // searchNASAImages
+  // Search NASA Images
   // -------------------------
   describe('searchNASAImages', () => {
     it('should return search results when query is provided', async () => {

@@ -13,21 +13,17 @@ app.use(limiter);
 app.use(cors());
 app.use(express.json());
 
-// Routes
 const nasaRoutes = require('./routes/nasaRoutes');
 app.use('/api', nasaRoutes);
 
-// Health check
 app.get('/health', (req, res) => {
   res.status(200).send('OK');
 });
 
-// Root
 app.get('/', (req, res) => {
   res.json({ status: 'API is running 🚀' });
 });
 
-// Error handler
 const errorHandler = require('./middleware/errorHandler');
 app.use(errorHandler);
 
