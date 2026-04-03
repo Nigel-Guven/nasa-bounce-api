@@ -1,4 +1,3 @@
-import React from 'react';
 import galaxy from '../assets/galaxy.jpg';
 
 const LiveFeed = () => {
@@ -38,7 +37,7 @@ const LiveFeed = () => {
             <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg mb-4">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src={`https://www.youtube.com/embed/${feed.videoId}?autoplay=1&mute=1&rel=0`}
+                src={`https://www.youtube.com/embed/${feed.videoId}?autoplay=0&mute=1&rel=0`}
                 title={feed.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
