@@ -37,18 +37,9 @@ const Search = () => {
   return (
     <div className="bg-galaxy p-6 flex flex-col items-center">
       <div className="max-w-7xl w-full">
-
         <header className="mb-12 text-center mt-10">
-          <div className="inline-flex items-center justify-center mb-4">
-            <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-blue-500/50" />
-            <h2 className="mx-4 text-blue-400 uppercase tracking-[0.5em] text-[10px] font-black drop-shadow-md">
-              Universal Database
-            </h2>
-            <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-blue-500/50" />
-          </div>
-
           <h1 className="text-5xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter drop-shadow-2xl">
-            Cosmic <span className="text-blue-500">Archive</span>
+            NASA <span className="text-blue-500">Archive</span>
           </h1>
 
           <form onSubmit={handleSearch} className="relative max-w-3xl mx-auto group">
@@ -63,7 +54,7 @@ const Search = () => {
               type="submit"
               className="absolute right-3 top-3 bottom-3 bg-blue-600 hover:bg-blue-500 px-10 rounded-xl font-black uppercase text-xs tracking-widest transition-all shadow-lg active:scale-95 text-white"
             >
-              Scan
+              Search
             </button>
           </form>
         </header>
@@ -87,7 +78,6 @@ const Search = () => {
         ) : loading ? (
           <Loading />
         ) : (
-          /* --- MASONRY GRID --- */
           <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8 mb-20">
             {results.map((item, index) => (
               item.image && (

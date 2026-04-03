@@ -29,13 +29,6 @@ const LiveFeed = () => {
       <div className="max-w-7xl w-full">
         
         <header className="mb-12 text-center mt-10">
-          <div className="inline-flex items-center justify-center mb-4">
-            <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-amber-500/50" />
-            <h2 className="mx-4 text-amber-400 uppercase tracking-[0.5em] text-[10px] font-black drop-shadow-md">
-              Real-Time Telemetry
-            </h2>
-            <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-amber-500/50" />
-          </div>
 
           <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-[0.1em] drop-shadow-[0_5px_15px_rgba(0,0,0,1)]">
             Live Cosmic <span className="text-orange-500">Feeds</span>

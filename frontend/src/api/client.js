@@ -6,7 +6,6 @@ const client = axios.create({
 });
 
 client.interceptors.request.use((config) => {
-  // You could add auth headers here later
   return config;
 });
 

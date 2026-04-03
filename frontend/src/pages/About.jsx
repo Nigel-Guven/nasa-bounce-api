@@ -8,14 +8,6 @@ const About = () => {
       <div className="max-w-4xl w-full mt-10 mb-20">
         
         <header className="mb-12 text-center">
-          <div className="inline-flex items-center justify-center mb-4">
-            <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-cyan-500/50" />
-            <h2 className="mx-4 text-cyan-400 uppercase tracking-[0.5em] text-[10px] font-black drop-shadow-md">
-              System Documentation
-            </h2>
-            <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-cyan-500/50" />
-          </div>
-
           <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tight drop-shadow-[0_5px_15px_rgba(0,0,0,1)]">
             Project <span className="text-blue-500">Mission</span>
           </h1>

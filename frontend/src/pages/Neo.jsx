@@ -46,10 +46,6 @@ const NEO = () => {
     <div className="bg-galaxy p-6 flex flex-col items-center">
       <div className="max-w-7xl w-full">
         <header className="mb-10 text-center mt-10">
-          <div className="inline-flex items-center justify-center mb-4">
-            <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-cyan-500/50" />
-            <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-cyan-500/50" />
-          </div>
           <h1 className="text-4xl md:text-6xl font-black mb-4 text-white uppercase tracking-tight">
             Near Earth <span className="text-blue-500">Objects</span>
           </h1>

@@ -5,9 +5,7 @@
 @layer components {
   .bg-galaxy {
     @apply min-h-screen w-full text-white bg-cover bg-center bg-fixed bg-no-repeat;
-    /* Use a relative path to your image asset */
     background-image: url('./assets/galaxy.jpg');
-    /* Fallback color matches the darkest part of the galaxy */
     background-color: #020617; 
   }
 }
