@@ -1,3 +1,6 @@
-import api from './client';
+import client from './client';
 
-export const fetchAPOD = () => api.get('/apod');
+export const getAPOD = async () => {
+  const response = await client.get('/apod');
+  return response.data;
+};

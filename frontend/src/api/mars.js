@@ -1,4 +1,6 @@
-import api from './client';
+import client from './client';
 
-export const fetchMarsPhotos = (params) =>
-  api.get('/mars', { params });
+export const getMarsPhotos = async (params) => {
+  const response = await client.get('/mars', { params });
+  return response.data;
+};
