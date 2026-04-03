@@ -13,7 +13,7 @@ const Sidebar = () => {
 
   return (
     <div className="w-64 bg-gray-900 text-white min-h-screen p-6 fixed">
-      <h1 className="text-2xl font-bold mb-8">NASA Bounce</h1>
+      <h1 className="text-2xl font-bold mb-8">NASA Insights API</h1>
       <nav className="flex flex-col space-y-4">
         {links.map(link => (
           <NavLink

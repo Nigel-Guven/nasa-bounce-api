@@ -26,14 +26,27 @@ const Home = () => {
     */
     <div className="bg-galaxy p-6 flex flex-col items-center">
       <div className="max-w-5xl w-full mt-10">
-        <header className="mb-8 text-center">
-          <h2 className="text-blue-400 uppercase tracking-widest text-xs font-bold mb-2">
+        <header className="mb-12 text-center mt-10 relative">
+          {/* The Scrim: This invisible box ensures the text always has a dark backdrop */}
+          <div className="absolute -inset-x-20 -top-10 bottom-0 bg-black/40 blur-3xl -z-10 rounded-full" />
+
+          <h2 className="text-amber-400/90 uppercase tracking-[0.5em] text-[10px] sm:text-xs font-black mb-4 
+               drop-shadow-[0_2px_4px_rgba(0,0,0,1)] bg-amber-950/20 px-4 py-1 rounded-full border border-amber-500/30 inline-block">
             Astronomy Picture of the Day
           </h2>
-          <h1 className="text-4xl md:text-5xl font-extrabold drop-shadow-2xl">
-            {apod.title}
+
+          <h1 className="text-4xl md:text-6xl font-black text-white leading-tight">
+            {/* Outline + Shadow combo for maximum clarity */}
+            <span className="drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
+              {apod.title}
+            </span>
           </h1>
-          <p className="text-gray-400 mt-2 font-mono">{apod.date}</p>
+
+          <div className="mt-6 flex justify-center">
+            <span className="bg-blue-500/10 border border-blue-500/30 text-blue-300 px-4 py-1 rounded-full text-xs font-mono backdrop-blur-md shadow-lg">
+            Date Today: {apod.date}
+            </span>
+          </div>
         </header>
 
         <div className="flex flex-col items-center">

@@ -16,8 +16,8 @@ const About = () => {
 
         <div className="space-y-6 text-lg leading-relaxed text-gray-200">
           <p>
-            This application serves as a sophisticated intermediary between enthusiasts and 
-            <strong> NASA’s Open Data APIs</strong>. Designed as a full-stack exploration tool, 
+            This application serves as a intermediary between enthusiasts and 
+            <strong><a href="https://api.nasa.gov/" target="_blank"> NASA Open API</a></strong>. Designed as a full-stack exploration tool, 
             it bridges the gap between complex raw data and intuitive visual storytelling.
           </p>
 
@@ -33,9 +33,14 @@ const About = () => {
           </div>
 
           <p>
-            Built with a focus on <strong>UI/UX excellence</strong> and efficient API orchestration, 
+            Built with a focus on efficient API orchestration, 
             this project demonstrates modern full-stack capabilities using React, Node.js, and Express 
             to transform scientific datasets into an engaging cosmic experience.
+          </p>
+
+          <p>
+            This project was developed by <strong><a href="https://github.com/Nigel-Guven" target="_blank">Nigel Guven</a></strong> for a demonstration of his technical skills 
+            in an interview process with <strong><a href="https://www.bounceinsights.com" target="_blank">Bounce Insights</a></strong> .
           </p>
         </div>
 
