@@ -5,13 +5,11 @@ const client = axios.create({
   timeout: 10000,
 });
 
-// Optional: request interceptor
 client.interceptors.request.use((config) => {
   // You could add auth headers here later
   return config;
 });
 
-// Optional: response interceptor (central error handling)
 client.interceptors.response.use(
   (response) => response,
   (error) => {

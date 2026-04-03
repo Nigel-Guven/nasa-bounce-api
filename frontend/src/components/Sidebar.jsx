@@ -5,8 +5,9 @@ const Sidebar = () => {
   const links = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
+    { name: 'Live Feed', path: '/live' },
     { name: 'Mars', path: '/mars' },
-    { name: 'NEO', path: '/neo' },
+    { name: 'Near Earth Objects', path: '/neo' },
     { name: 'Search', path: '/search' },
   ];
 

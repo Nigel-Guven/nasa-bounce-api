@@ -16,11 +16,11 @@ function App() {
         <main className="flex-1 ml-64 min-h-screen p-6">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/mars" element={<Mars />} />
-            <Route path="/neo" element={<Neo />} />
-            <Route path="/search" element={<Search />} />
             <Route path="/about" element={<About />} />
             <Route path="/live" element={<LiveFeed />} />
+            <Route path="/mars" element={<Mars />} />
+            <Route path="/neo" element={<Neo />} />
+            <Route path="/search" element={<Search />} /> 
           </Routes>
         </main>
       </div>

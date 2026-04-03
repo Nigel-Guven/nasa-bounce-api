@@ -1,10 +1,10 @@
 import React from 'react';
-import { useAPOD } from '../hooks/useApod'; // Ensure the case matches your filename
+import { useAPOD } from '../hooks/useApod'; 
 import Loading from '../components/Loader.jsx';
 import galaxy from '../assets/galaxy.jpg';
 
 const Home = () => {
-  // The hook now handles loading, error, and data states internally
+
   const { data: apod, loading, error } = useAPOD();
 
   if (loading) return <Loading />;

@@ -2,7 +2,7 @@ import React from 'react';
 import galaxy from '../assets/galaxy.jpg';
 
 const About = () => {
-  const repoUrl = "https://github.com/your-username/your-repo-name"; // Replace with your actual URL
+  const repoUrl = "https://github.com/Nigel-Guven/nasa-bounce-api";
 
   return (
     <div
