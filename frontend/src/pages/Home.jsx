@@ -8,9 +8,34 @@ const Home = () => {
   if (loading) return <Loading />;
   
   if (error) return (
-    <div className="flex items-center justify-center min-h-screen text-red-400">
-      <div className="bg-red-900/20 border border-red-500 p-6 rounded-xl">
-        {error}
+    <div className="flex items-center justify-center min-h-screen bg-galaxy p-6">
+      <div className="relative group max-w-md w-full">
+        {/* Animated Glow Backdrop */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-amber-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+        
+        <div className="relative bg-black/80 backdrop-blur-xl border border-red-500/50 p-8 rounded-2xl shadow-[0_0_50px_rgba(220,38,38,0.2)] text-center">
+          {/* Warning Icon */}
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-500/10 border border-red-500/30 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+
+          <h3 className="text-xl font-bold text-white mb-2 uppercase tracking-widest">
+            Signal Interrupted
+          </h3>
+          
+          <p className="text-red-300/80 mb-8 font-mono text-sm leading-relaxed">
+            {error}
+          </p>
+
+          <button 
+            onClick={() => window.location.reload()}
+            className="px-6 py-2 bg-red-600/20 hover:bg-red-600/40 border border-red-500/50 text-red-100 rounded-full text-xs font-bold transition-all duration-300 hover:scale-105 active:scale-95"
+          >
+            RE-ESTABLISH CONNECTION
+          </button>
+        </div>
       </div>
     </div>
   );

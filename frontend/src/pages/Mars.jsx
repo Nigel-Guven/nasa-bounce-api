@@ -22,7 +22,7 @@ const Mars = () => {
       });
       setPhotos(response.data.photos || response.data); 
     } catch (err) {
-      setError('Houston, we have a problem.');
+      setError('Houston, we have a problem. Unable to retrieve Mars photos at this time.');
     } finally {
       setLoading(false);
     }
