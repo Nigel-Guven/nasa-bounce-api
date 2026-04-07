@@ -1,6 +1,8 @@
 Live Website hosted on vercel here: https://nasa-bounce-api.vercel.app/
 
-Backend Docker Container hosted at Render: https://nasa-bounce-api.onrender.com/
+Website hosted link: https://vercel.com/nigel-guvens-projects/nasa-bounce-api (REQUIRES CREDENTIALS) 
+
+Backend hosted as a Docker container at Render: https://nasa-bounce-api.onrender.com/
 
 # 🚀 NASA Bounce Insights Dashboard
 
