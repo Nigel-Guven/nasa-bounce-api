@@ -18,7 +18,7 @@ const Search = () => {
     setError('');
     
     try {
-      const response = await axios.get(`/search`, {
+      const response = await api.get(`/search`, {
         params: { q: query }
       });
       

@@ -17,7 +17,7 @@ const Mars = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.get(`/mars`, {
+      const response = await api.get(`/mars`, {
         params: { rover, date }
       });
       setPhotos(response.data.photos || response.data); 

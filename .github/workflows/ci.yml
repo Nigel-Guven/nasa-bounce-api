@@ -7,38 +7,60 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
-    name: Run Backend Tests
+  backend-test:
+    name: Backend (Node ${{ matrix.node-version }})
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x, 20.x]
-
     steps:
-      # 1. Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
-      # 3. Install dependencies
-      - name: Install dependencies
+      - name: Install Backend dependencies
         working-directory: ./backend
         run: npm ci
 
-      # 4. Run tests
       - name: Run Backend tests
         working-directory: ./backend
         run: npm run coverage
         
-      - name: Upload coverage reports to Codecov
+      - name: Upload Backend coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
+          flags: backend
 
-      
+  frontend-test:
+    name: Frontend (Node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Frontend dependencies
+        working-directory: ./frontend
+        run: npm ci
+
+      - name: Run Frontend tests
+        working-directory: ./frontend
+        run: npm test -- --run 
+        
+      - name: Upload Frontend coverage to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: frontend
