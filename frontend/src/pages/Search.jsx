@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/client';
 import Loading from '../components/Loader.jsx';
 
 const Search = () => {
@@ -18,7 +18,7 @@ const Search = () => {
     setError('');
     
     try {
-      const response = await axios.get(`http://localhost:5000/api/search`, {
+      const response = await axios.get(`/search`, {
         params: { q: query }
       });
       

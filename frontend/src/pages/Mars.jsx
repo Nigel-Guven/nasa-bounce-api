@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api/client';
 import Loading from '../components/Loader.jsx';
 
 const Mars = () => {
@@ -17,7 +17,7 @@ const Mars = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.get(`http://localhost:5000/api/mars`, {
+      const response = await axios.get(`/mars`, {
         params: { rover, date }
       });
       setPhotos(response.data.photos || response.data); 

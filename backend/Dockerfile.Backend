@@ -13,4 +13,4 @@ EXPOSE 5000
 
 HEALTHCHECK CMD curl --fail http://localhost:5000/health || exit 1
 
-CMD ["npm", "start"]
+CMD ["node", "src/server.js"]
