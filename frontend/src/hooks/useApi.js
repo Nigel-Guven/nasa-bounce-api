@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { track } from '@vercel/analytics'; // Import the track function
+import { track } from '@vercel/analytics';
 
 export function useApi(apiFunction, params = null, dependencies = []) {
   const [data, setData] = useState(null);

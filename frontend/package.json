@@ -48,7 +48,7 @@
   },
   "jest": {
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-router-dom|@remix-run|react-router)/)"
+      "node_modules/(?!(@vercel/analytics|react-router-dom|@remix-run|react-router))"
     ]
   }
 }

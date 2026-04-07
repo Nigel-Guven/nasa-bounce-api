@@ -1,5 +1,8 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { useApi } from './useApi';
+jest.mock('@vercel/analytics');
+
+import { track } from '@vercel/analytics';
 
 describe('useApi Hook', () => {
   it('should initialize with loading state and null data', () => {
@@ -23,6 +26,15 @@ describe('useApi Hook', () => {
 
     expect(result.current.data).toEqual(mockData);
     expect(result.current.error).toBe(null);
+  });
+
+  it('should track API success to Vercel Analytics', async () => {
+  const mockApi = jest.fn().mockResolvedValue('success');
+  renderHook(() => useApi(mockApi));
+
+  await waitFor(() => {
+      expect(track).toHaveBeenCalledWith('API_Success', expect.any(Object));
+    });
   });
 
   it('should return an error message on failure', async () => {
