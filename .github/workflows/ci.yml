@@ -57,7 +57,7 @@ jobs:
 
       - name: Run Frontend tests
         working-directory: ./frontend
-        run: npm test
+        run: npm test -- --coverage --watchAll=false
         env:
           CI: true
         
